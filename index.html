@@ -1,286 +1,295 @@
 <!DOCTYPE html>
-<html lang="en">
-
-  <head>
+<html lang="es">
+<head>
     <meta charset="UTF-8">
-    <title>Untitled</title>
-    <link rel="stylesheet" href="./style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Deilyn Novedades - Moda infantil bonita, moderna y cómoda.">
+    <title>Deilyn Novedades</title>
 
-  </head>
-    
-  <body>
-  <div class="pagina">
+    <link rel="stylesheet" href="style.css">
+</head>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="logo">Deilyn Novedades</div>
+<body>
 
-    <div class="nav-links">
-      <a href="#" id="enlaceInicio">Inicio</a>
-      <a href="#novedades">Novedades</a>
-      <a href="#ropa">Ropa</a>
-      <a href="#contacto">Contacto</a>
-    </div>
-  </nav>
+    <!-- NAVBAR -->
+    <header class="navbar">
+        <div class="logo">Deilyn <span>Novedades</span></div>
 
-  <!-- INICIO -->
-  <section class="hero" id="inicio">
-    <div class="hero-contenido">
-      <span class="etiqueta">✨ Moda infantil</span>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#novedades">Novedades</a>
+            <a href="#catalogo">Catálogo</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
 
-      <h1>Bienvenidos a<br>Deilyn Novedades</h1>
-
-      <p>
-        Encuentra ropa bonita, moderna y cómoda para los más pequeños.
-      </p>
-
-      <button id="btnExplorar">Explorar novedades</button>
-    </div>
-  </section>
-
-  <!-- NOVEDADES -->
-  <section class="productos" id="novedades">
-
-    <div class="titulo-seccion">
-      <span>NUEVO</span>
-      <h2>Novedades</h2>
-      <p>Descubre algunos de nuestros conjuntos favoritos.</p>
-    </div>
-
-    <div class="contenedor-productos">
-
-      <div class="producto">
-        <img src="https://i.ibb.co/fdQVwHGR/jeju73.jpg" alt="Conjunto infantil">
-        <div class="producto-info">
-          <h3>Conjunto infantil</h3>
-          <p>Conjunto moderno y cómodo para niños.</p>
-          <strong>RD$1,000</strong>
-          <button class="btn-producto" data-producto="1">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto">
-        <img src="https://i.ibb.co/S7sNx3q9/jsheyr75.webp" alt="Conjunto moderno">
-        <div class="producto-info">
-          <h3>Conjunto moderno</h3>
-          <p>Un estilo bonito para cualquier ocasión.</p>
-          <strong>RD$1,000</strong>
-          <button class="btn-producto" data-producto="2">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto">
-        <img src="https://i.ibb.co/NgfDDtMm/kdhdjd.jpg" alt="Conjunto casual">
-        <div class="producto-info">
-          <h3>Conjunto casual</h3>
-          <p>Perfecto para un look cómodo y moderno.</p>
-          <strong>RD$1,000</strong>
-          <button class="btn-producto" data-producto="3">Ver producto</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ROPA -->
-  <section class="seccion-ropa" id="ropa">
-
-    <div class="titulo-seccion">
-      <span>CATÁLOGO</span>
-      <h2>Ropa infantil</h2>
-      <p>Elige la categoría que quieras explorar.</p>
-    </div>
-
-    <div class="filtros">
-
-      <button class="filtro activo" data-categoria="todos">Todos</button>
-      <button class="filtro" data-categoria="pantalones">Pantalones</button>
-      <button class="filtro" data-categoria="poloche">Poloches</button>
-      <button class="filtro" data-categoria="conjuntos">Conjuntos</button>
-      <button class="filtro" data-categoria="shorts">Shorts</button>
-      <button class="filtro" data-categoria="vestidos">Vestidos</button>
-      <button class="filtro" data-categoria="camisas">Camisas</button>
-
-    </div>
-
-    <div class="filtros genero">
-
-      <button class="filtro-genero activo" data-genero="todos">Todos</button>
-      <button class="filtro-genero" data-genero="ninos">👦 Niños</button>
-      <button class="filtro-genero" data-genero="ninas">👧 Niñas</button>
-
-    </div>
-
-    <div class="contenedor-ropa">
-
-      <div class="producto ropa-item" data-categoria="pantalones" data-genero="ninos">
-        <img src="https://i.ibb.co/ZRVm145d/sfgwes.jpg" alt="Pantalón para niño">
-        <div class="producto-info">
-          <h3>Pantalón para niño</h3>
-          <p>Pantalón cómodo para el día a día.</p>
-          <strong>RD$700</strong>
-          <button class="btn-producto" data-producto="4">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="pantalones" data-genero="ninas">
-        <img src="https://i.ibb.co/fcd6vFY/ehw.jpg" alt="Pantalón para niña">
-        <div class="producto-info">
-          <h3>Pantalón para niña</h3>
-          <p>Diseño cómodo y bonito.</p>
-          <strong>RD$700</strong>
-          <button class="btn-producto" data-producto="5">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="poloche" data-genero="ninos">
-        <img src="https://i.ibb.co/HpRW0pzJ/sasa.jpg" alt="Poloche para niño">
-        <div class="producto-info">
-          <h3>Poloche para niño</h3>
-          <p>Poloche cómodo para cualquier ocasión.</p>
-          <strong>RD$500</strong>
-          <button class="btn-producto" data-producto="6">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="poloche" data-genero="ninas">
-        <img src="https://i.ibb.co/9mPbBVXc/jddd.jpg" alt="Poloche para niña">
-        <div class="producto-info">
-          <h3>Poloche para niña</h3>
-          <p>Estilo sencillo y bonito.</p>
-          <strong>RD$500</strong>
-          <button class="btn-producto" data-producto="7">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="conjuntos" data-genero="ninos">
-        <img src="https://i.ibb.co/nNNcRJWw/jdd.jpg" alt="Conjunto para niño">
-        <div class="producto-info">
-          <h3>Conjunto para niño</h3>
-          <p>Conjunto moderno y cómodo.</p>
-          <strong>RD$1,000</strong>
-          <button class="btn-producto" data-producto="8">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="conjuntos" data-genero="ninas">
-        <img src="https://i.ibb.co/C3M4Zj76/jjhj.jpg" alt="Conjunto para niña">
-        <div class="producto-info">
-          <h3>Conjunto para niña</h3>
-          <p>Un conjunto bonito para las pequeñas.</p>
-          <strong>RD$1,000</strong>
-          <button class="btn-producto" data-producto="9">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="shorts" data-genero="ninos">
-        <img src="https://i.ibb.co/pj458jFs/jsjs.jpg" alt="Short para niño">
-        <div class="producto-info">
-          <h3>Short para niño</h3>
-          <p>Short ligero y cómodo.</p>
-          <strong>RD$450</strong>
-          <button class="btn-producto" data-producto="10">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="shorts" data-genero="ninas">
-        <img src="https://i.ibb.co/R4PZ6TJ3/jsius.jpg" alt="Short para niña">
-        <div class="producto-info">
-          <h3>Short para niña</h3>
-          <p>Diseño cómodo para todos los días.</p>
-          <strong>RD$450</strong>
-          <button class="btn-producto" data-producto="11">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="vestidos" data-genero="ninas">
-        <img src="https://i.ibb.co/d0xmh8CL/ksjs.jpg" alt="Vestido para niña">
-        <div class="producto-info">
-          <h3>Vestido para niña</h3>
-          <p>Vestido bonito y moderno.</p>
-          <strong>RD$900</strong>
-          <button class="btn-producto" data-producto="12">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="camisas" data-genero="ninas">
-        <img src="https://i.ibb.co/MDRG8KKM/jui7.jpg" alt="Camisa para niña">
-        <div class="producto-info">
-          <h3>Camisa para niña</h3>
-          <p>Camisa con un estilo moderno.</p>
-          <strong>RD$650</strong>
-          <button class="btn-producto" data-producto="13">Ver producto</button>
-        </div>
-      </div>
-
-      <div class="producto ropa-item" data-categoria="camisas" data-genero="ninos">
-        <img src="https://i.ibb.co/gFXddLW1/78.jpg" alt="Camisa para niño">
-        <div class="producto-info">
-          <h3>Camisa para niño</h3>
-          <p>Camisa de manga larga con diseño moderno.</p>
-          <strong>RD$650</strong>
-          <button class="btn-producto" data-producto="14">Ver producto</button>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- CONTACTO -->
-  <section class="contacto" id="contacto">
-
-    <div class="titulo-seccion">
-      <span>CONTACTO</span>
-      <h2>¿Te interesa algún producto?</h2>
-      <p>Escríbenos para consultar disponibilidad, tallas y pedidos.</p>
-    </div>
-
-    <div class="contacto-botones">
-
-      <a href="https://wa.me/18295861825" target="_blank" class="contacto-btn whatsapp">
-        💬 WhatsApp
-      </a>
-
-      <a href="https://www.instagram.com/deilyn_novedades/" target="_blank" class="contacto-btn instagram">
-        📸 Instagram
-      </a>
-
-    </div>
-
-  </section>
-
-  <!-- MODAL -->
-  <div class="modal" id="modalProducto">
-
-    <div class="modal-contenido">
-
-      <button class="cerrar-modal" id="cerrarModal">×</button>
-
-      <img id="modalImagen" src="" alt="Producto">
-
-      <div class="modal-info">
-
-        <span>DEILYN NOVEDADES</span>
-
-        <h2 id="modalTitulo"></h2>
-
-        <p id="modalDescripcion"></p>
-
-        <strong id="modalPrecio"></strong>
-
-        <button id="botonContacto">
-          Quiero este producto →
+        <button class="cart-button" id="openCart">
+            🛒 <span>Carrito</span>
+            <b id="cartCount">0</b>
         </button>
+    </header>
 
-      </div>
+
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <p class="mini-title">✨ MODA INFANTIL</p>
+
+            <h1>
+                Bienvenidos a<br>
+                <span>Deilyn Novedades</span>
+            </h1>
+
+            <p>
+                Encuentra ropa bonita, moderna y cómoda
+                para los más pequeños.
+            </p>
+
+            <a href="#catalogo" class="main-button">
+                Explorar catálogo
+            </a>
+        </div>
+    </section>
+
+
+    <!-- NOVEDADES -->
+    <section class="section" id="novedades">
+
+        <div class="section-title">
+            <span>NUEVO</span>
+            <h2>Novedades</h2>
+            <p>Descubre algunos de nuestros conjuntos favoritos.</p>
+        </div>
+
+        <div class="products-grid" id="featuredProducts"></div>
+
+    </section>
+
+
+    <!-- CATÁLOGO -->
+    <section class="section catalog-section" id="catalogo">
+
+        <div class="section-title">
+            <span>CATÁLOGO</span>
+            <h2>Ropa infantil</h2>
+            <p>Elige la categoría que quieras explorar.</p>
+        </div>
+
+
+        <!-- BUSCADOR -->
+        <div class="search-box">
+            <input
+                type="text"
+                id="searchInput"
+                placeholder="🔎 Buscar producto..."
+            >
+        </div>
+
+
+        <!-- CATEGORÍAS -->
+        <div class="filters" id="categoryFilters">
+
+            <button class="filter active" data-category="todos">
+                Todos
+            </button>
+
+            <button class="filter" data-category="pantalones">
+                Pantalones
+            </button>
+
+            <button class="filter" data-category="poloches">
+                Poloches
+            </button>
+
+            <button class="filter" data-category="conjuntos">
+                Conjuntos
+            </button>
+
+            <button class="filter" data-category="shorts">
+                Shorts
+            </button>
+
+            <button class="filter" data-category="vestidos">
+                Vestidos
+            </button>
+
+            <button class="filter" data-category="camisas">
+                Camisas
+            </button>
+
+        </div>
+
+
+        <!-- GÉNERO -->
+        <div class="gender-filters">
+
+            <button class="gender active" data-gender="todos">
+                Todos
+            </button>
+
+            <button class="gender" data-gender="niño">
+                👦 Niños
+            </button>
+
+            <button class="gender" data-gender="niña">
+                👧 Niñas
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCTOS -->
+        <div class="products-grid" id="productsGrid"></div>
+
+        <p class="no-products" id="noProducts">
+            No encontramos productos con esa búsqueda.
+        </p>
+
+    </section>
+
+
+    <!-- CONTACTO -->
+    <section class="contact" id="contacto">
+
+        <div>
+            <span>CONTACTO</span>
+
+            <h2>¿Te interesa algún producto?</h2>
+
+            <p>
+                Escríbenos para consultar disponibilidad,
+                tallas y pedidos.
+            </p>
+        </div>
+
+        <div class="contact-buttons">
+
+            <a
+                href="https://wa.me/18295861825"
+                target="_blank"
+                class="whatsapp"
+            >
+                💬 WhatsApp
+            </a>
+
+            <a
+                href="https://www.instagram.com/deilyn_novedades/"
+                target="_blank"
+                class="instagram"
+            >
+                📸 Instagram
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- MODAL PRODUCTO -->
+    <div class="modal" id="productModal">
+
+        <div class="modal-content">
+
+            <button class="close-modal" id="closeProductModal">
+                ×
+            </button>
+
+            <img id="modalImage" src="" alt="Producto">
+
+            <div class="modal-info">
+
+                <p class="modal-category" id="modalCategory">
+                    Producto
+                </p>
+
+                <h2 id="modalName">
+                    Producto
+                </h2>
+
+                <p id="modalDescription">
+                    Descripción
+                </p>
+
+                <h3 id="modalPrice">
+                    RD$0
+                </h3>
+
+                <button
+                    class="add-cart-button"
+                    id="modalAddCart"
+                >
+                    🛒 Agregar al carrito
+                </button>
+
+            </div>
+
+        </div>
 
     </div>
 
-  </div>
 
-</div>
-    <script  src="./script.js"></script>
+    <!-- CARRITO -->
+    <div class="modal" id="cartModal">
 
-  </body>
-  
+        <div class="cart-content">
+
+            <div class="cart-header">
+                <h2>🛒 Tu carrito</h2>
+
+                <button
+                    class="close-modal"
+                    id="closeCart"
+                >
+                    ×
+                </button>
+            </div>
+
+            <div id="cartItems"></div>
+
+            <div class="empty-cart" id="emptyCart">
+                <div>🛒</div>
+                <p>Tu carrito está vacío.</p>
+                <button id="continueShopping">
+                    Seguir comprando
+                </button>
+            </div>
+
+
+            <div class="cart-summary" id="cartSummary">
+
+                <div>
+                    <span>Subtotal</span>
+                    <strong id="cartTotal">RD$0</strong>
+                </div>
+
+                <button
+                    class="whatsapp-order"
+                    id="whatsappOrder"
+                >
+                    💬 Pedir por WhatsApp
+                </button>
+
+                <button
+                    class="clear-cart"
+                    id="clearCart"
+                >
+                    Vaciar carrito
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <strong>DEILYN NOVEDADES</strong>
+        <p>Moda infantil bonita, moderna y cómoda.</p>
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
 </html>
