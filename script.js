@@ -1,859 +1,898 @@
-/* =========================
-   GENERAL
-========================= */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #fff7fb;
-    color: #332530;
-}
-
-button,
-input {
-    font-family: inherit;
-}
-
-button {
-    cursor: pointer;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-
-/* =========================
-   NAVBAR
-========================= */
-
-.navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 16px 6%;
-
-    background: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(15px);
-
-    border-bottom: 1px solid #f5d8e8;
-}
-
-.logo {
-    font-size: 22px;
-    font-weight: 800;
-    color: #e05b9c;
-}
-
-.logo span {
-    color: #733c61;
-}
-
-.navbar nav {
-    display: flex;
-    gap: 25px;
-}
-
-.navbar nav a {
-    font-weight: 600;
-    transition: 0.3s;
-}
-
-.navbar nav a:hover {
-    color: #df5799;
-}
-
-.cart-button {
-    border: none;
-    background: #f6d4e5;
-    color: #713755;
-
-    padding: 10px 15px;
-    border-radius: 30px;
-
-    font-weight: bold;
-}
-
-.cart-button b {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 23px;
-    height: 23px;
-
-    margin-left: 5px;
-
-    border-radius: 50%;
-
-    background: #df5799;
-    color: white;
-
-    font-size: 12px;
-}
-
-
-/* =========================
-   HERO
-========================= */
-
-.hero {
-    min-height: 600px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    text-align: center;
-
-    padding: 60px 20px;
-
-    background:
-        radial-gradient(circle at top left, #ffd8ea, transparent 40%),
-        radial-gradient(circle at bottom right, #f3c8df, transparent 40%),
-        #fff7fb;
-}
-
-.hero-content {
-    max-width: 750px;
-}
-
-.mini-title {
-    color: #d94f94;
-    font-weight: 800;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
-}
-
-.hero h1 {
-    font-size: clamp(42px, 7vw, 78px);
-    line-height: 1.05;
-    margin-bottom: 25px;
-}
-
-.hero h1 span {
-    color: #df5799;
-}
-
-.hero p:not(.mini-title) {
-    font-size: 19px;
-    color: #6f5a67;
-    margin-bottom: 35px;
-}
-
-.main-button {
-    display: inline-block;
-
-    padding: 15px 28px;
-
-    border-radius: 30px;
-
-    background: #df5799;
-    color: white;
-
-    font-weight: bold;
-
-    box-shadow: 0 10px 25px rgba(223, 87, 153, 0.25);
-
-    transition: 0.3s;
-}
-
-.main-button:hover {
-    transform: translateY(-3px);
-    background: #c94483;
-}
-
-
-/* =========================
-   SECTIONS
-========================= */
-
-.section {
-    padding: 90px 6%;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 45px;
-}
-
-.section-title > span,
-.contact > div > span {
-    font-size: 13px;
-    font-weight: 800;
-    letter-spacing: 3px;
-    color: #df5799;
-}
-
-.section-title h2 {
-    font-size: 42px;
-    margin: 10px 0;
-}
-
-.section-title p {
-    color: #806d78;
-}
-
-
-/* =========================
-   SEARCH
-========================= */
-
-.search-box {
-    max-width: 600px;
-    margin: 0 auto 25px;
-}
-
-.search-box input {
-    width: 100%;
-
-    border: 1px solid #f0c9dc;
-    outline: none;
-
-    background: white;
-
-    padding: 15px 20px;
-
-    border-radius: 30px;
-
-    font-size: 16px;
-
-    box-shadow: 0 5px 20px rgba(130, 65, 100, 0.06);
-}
-
-.search-box input:focus {
-    border-color: #df5799;
-}
-
-
-/* =========================
-   FILTERS
-========================= */
-
-.filters,
-.gender-filters {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-bottom: 18px;
-}
-
-.filter,
-.gender {
-    border: 1px solid #edc5d9;
-
-    background: white;
-
-    color: #70465f;
-
-    padding: 10px 17px;
-
-    border-radius: 25px;
-
-    transition: 0.25s;
-}
-
-.filter:hover,
-.gender:hover,
-.filter.active,
-.gender.active {
-    background: #df5799;
-    color: white;
-    border-color: #df5799;
-}
-
-
-/* =========================
-   PRODUCTS
-========================= */
-
-.products-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(auto-fit, minmax(230px, 1fr));
-
-    gap: 25px;
-}
-
-.product-card {
-    background: white;
-
-    border-radius: 22px;
-
-    overflow: hidden;
-
-    border: 1px solid #f3d9e6;
-
-    box-shadow:
-        0 10px 30px rgba(90, 45, 70, 0.07);
-
-    transition: 0.3s;
-
-    position: relative;
-}
-
-.product-card:hover {
-    transform: translateY(-6px);
-
-    box-shadow:
-        0 18px 40px rgba(90, 45, 70, 0.12);
-}
-
-.product-image {
-    width: 100%;
-    height: 260px;
-
-    object-fit: cover;
-
-    display: block;
-
-    background: #f9eaf2;
-}
-
-.product-info {
-    padding: 20px;
-}
-
-.product-category {
-    font-size: 12px;
-    color: #df5799;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.product-info h3 {
-    margin: 7px 0;
-    font-size: 19px;
-}
-
-.product-info p {
-    color: #796873;
-    font-size: 14px;
-    min-height: 40px;
-}
-
-.product-price {
-    font-size: 21px;
-    font-weight: 800;
-    color: #713755;
-
-    margin: 14px 0;
-}
-
-.product-actions {
-    display: flex;
-    gap: 8px;
-}
-
-.view-product,
-.quick-cart {
-    border: none;
-
-    padding: 11px;
-
-    border-radius: 12px;
-
-    font-weight: bold;
-}
-
-.view-product {
-    flex: 1;
-
-    background: #f7dce9;
-    color: #713755;
-}
-
-.quick-cart {
-    width: 48px;
-
-    background: #df5799;
-    color: white;
-}
-
-.view-product:hover,
-.quick-cart:hover {
-    opacity: 0.85;
-}
-
-
-/* =========================
-   NO PRODUCTS
-========================= */
-
-.no-products {
-    display: none;
-
-    text-align: center;
-
-    padding: 40px;
-
-    color: #806d78;
-}
-
-
-/* =========================
-   CONTACT
-========================= */
-
-.contact {
-    padding: 80px 6%;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    gap: 40px;
-
-    background: #f8d9e8;
-}
-
-.contact h2 {
-    font-size: 38px;
-    margin: 10px 0;
-}
-
-.contact p {
-    color: #705766;
-}
-
-.contact-buttons {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-}
-
-.contact-buttons a {
-    padding: 14px 20px;
-
-    border-radius: 30px;
-
-    font-weight: bold;
-}
-
-.whatsapp {
-    background: #25d366;
-    color: white;
-}
-
-.instagram {
-    background: #df5799;
-    color: white;
-}
-
-
-/* =========================
-   MODALS
-========================= */
-
-.modal {
-    position: fixed;
-
-    inset: 0;
-
-    z-index: 3000;
-
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    padding: 20px;
-
-    background: rgba(38, 20, 31, 0.6);
-
-    backdrop-filter: blur(7px);
-}
-
-.modal.show {
-    display: flex;
-}
-
-.modal-content,
-.cart-content {
-    width: min(900px, 100%);
-
-    max-height: 90vh;
-
-    overflow-y: auto;
-
-    background: white;
-
-    border-radius: 25px;
-
-    position: relative;
-
-    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.2);
-}
-
-.modal-content {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    overflow: hidden;
-}
-
-.modal-content > img {
-    width: 100%;
-    height: 100%;
-
-    min-height: 450px;
-
-    object-fit: cover;
-}
-
-.modal-info {
-    padding: 50px 40px;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.modal-category {
-    color: #df5799;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 13px;
-}
-
-.modal-info h2 {
-    font-size: 35px;
-    margin: 10px 0;
-}
-
-.modal-info p:not(.modal-category) {
-    color: #766570;
-    line-height: 1.6;
-}
-
-.modal-info h3 {
-    font-size: 28px;
-    color: #713755;
-    margin: 20px 0;
-}
-
-.close-modal {
-    position: absolute;
-
-    top: 15px;
-    right: 15px;
-
-    width: 38px;
-    height: 38px;
-
-    border: none;
-
-    border-radius: 50%;
-
-    background: #f5dce8;
-
-    color: #713755;
-
-    font-size: 25px;
-
-    z-index: 5;
-}
-
-.add-cart-button {
-    border: none;
-
-    background: #df5799;
-    color: white;
-
-    padding: 15px;
-
-    border-radius: 13px;
-
-    font-weight: bold;
-
-    font-size: 16px;
-}
-
-
-/* =========================
-   CART
-========================= */
-
-.cart-content {
-    max-width: 650px;
-    padding: 30px;
-}
-
-.cart-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    margin-bottom: 20px;
-}
-
-.cart-header .close-modal {
-    position: static;
-}
-
-.cart-item {
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 15px 0;
-
-    border-bottom: 1px solid #f0dce6;
-}
-
-.cart-item img {
-    width: 75px;
-    height: 75px;
-
-    border-radius: 13px;
-
-    object-fit: cover;
-}
-
-.cart-item-info {
-    flex: 1;
-}
-
-.cart-item-info h4 {
-    margin-bottom: 5px;
-}
-
-.cart-item-price {
-    color: #df5799;
-    font-weight: bold;
-}
-
-.quantity-controls {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.quantity-controls button {
-    width: 30px;
-    height: 30px;
-
-    border: none;
-
-    border-radius: 8px;
-
-    background: #f6dbe8;
-
-    color: #713755;
-
-    font-weight: bold;
-}
-
-.remove-item {
-    border: none;
-
-    background: none;
-
-    color: #d94f94;
-
-    font-size: 18px;
-}
-
-.cart-summary {
-    padding-top: 20px;
-}
-
-.cart-summary > div {
-    display: flex;
-    justify-content: space-between;
-
-    font-size: 20px;
-
-    margin-bottom: 18px;
-}
-
-.whatsapp-order {
-    width: 100%;
-
-    border: none;
-
-    padding: 15px;
-
-    border-radius: 13px;
-
-    background: #25d366;
-    color: white;
-
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.clear-cart {
-    width: 100%;
-
-    border: none;
-
-    background: transparent;
-
-    color: #c74b83;
-
-    padding: 13px;
-
-    margin-top: 8px;
-}
-
-.empty-cart {
-    text-align: center;
-    padding: 40px;
-}
-
-.empty-cart div {
-    font-size: 50px;
-    margin-bottom: 10px;
-}
-
-.empty-cart p {
-    margin-bottom: 20px;
-    color: #806d78;
-}
-
-.empty-cart button {
-    border: none;
-
-    background: #df5799;
-    color: white;
-
-    padding: 12px 20px;
-
-    border-radius: 25px;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer {
-    text-align: center;
-
-    padding: 35px 20px;
-
-    background: #3c2635;
-
-    color: white;
-}
-
-footer p {
-    color: #d6bcca;
-    margin-top: 8px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 800px) {
-
-    .navbar {
-        flex-wrap: wrap;
-        gap: 15px;
+/* =====================================================
+   DEILYN NOVEDADES
+   SCRIPT PRINCIPAL
+===================================================== */
+
+
+/* =====================================================
+   PRODUCTOS REALES
+===================================================== */
+
+const products = [
+
+    {
+        id: 1,
+        name: "Conjunto infantil",
+        price: 1000,
+        category: "conjuntos",
+        gender: "niño",
+        description: "Conjunto moderno y cómodo para niños.",
+        image: "https://i.ibb.co/fdQVwHGR/jeju73.jpg",
+        featured: true
+    },
+
+    {
+        id: 2,
+        name: "Conjunto moderno",
+        price: 1000,
+        category: "conjuntos",
+        gender: "niña",
+        description: "Un estilo bonito para cualquier ocasión.",
+        image: "https://i.ibb.co/S7sNx3q9/jsheyr75.webp",
+        featured: true
+    },
+
+    {
+        id: 3,
+        name: "Conjunto casual",
+        price: 1000,
+        category: "conjuntos",
+        gender: "niña",
+        description: "Perfecto para un look cómodo y moderno.",
+        image: "https://i.ibb.co/NgfDDtMm/kdhdjd.jpg",
+        featured: true
+    },
+
+    {
+        id: 4,
+        name: "Pantalón para niño",
+        price: 700,
+        category: "pantalones",
+        gender: "niño",
+        description: "Pantalón cómodo para el día a día.",
+        image: "https://i.ibb.co/ZRVm145d/sfgwes.jpg"
+    },
+
+    {
+        id: 5,
+        name: "Pantalón para niña",
+        price: 700,
+        category: "pantalones",
+        gender: "niña",
+        description: "Diseño cómodo y bonito.",
+        image: "https://i.ibb.co/fcd6vFY/ehw.jpg"
+    },
+
+    {
+        id: 6,
+        name: "Poloche para niño",
+        price: 500,
+        category: "poloches",
+        gender: "niño",
+        description: "Poloche cómodo para cualquier ocasión.",
+        image: "https://i.ibb.co/HpRW0pzJ/sasa.jpg"
+    },
+
+    {
+        id: 7,
+        name: "Poloche para niña",
+        price: 500,
+        category: "poloches",
+        gender: "niña",
+        description: "Estilo sencillo y bonito.",
+        image: "https://i.ibb.co/9mPbBVXc/jddd.jpg"
+    },
+
+    {
+        id: 8,
+        name: "Conjunto para niño",
+        price: 1000,
+        category: "conjuntos",
+        gender: "niño",
+        description: "Conjunto moderno y cómodo.",
+        image: "https://i.ibb.co/nNNcRJWw/jdd.jpg"
+    },
+
+    {
+        id: 9,
+        name: "Conjunto para niña",
+        price: 1000,
+        category: "conjuntos",
+        gender: "niña",
+        description: "Un conjunto bonito para las pequeñas.",
+        image: "https://i.ibb.co/C3M4Zj76/jjhj.jpg"
+    },
+
+    {
+        id: 10,
+        name: "Short para niño",
+        price: 450,
+        category: "shorts",
+        gender: "niño",
+        description: "Short ligero y cómodo.",
+        image: "https://i.ibb.co/pj458jFs/jsjs.jpg"
+    },
+
+    {
+        id: 11,
+        name: "Short para niña",
+        price: 450,
+        category: "shorts",
+        gender: "niña",
+        description: "Diseño cómodo para todos los días.",
+        image: "https://i.ibb.co/R4PZ6TJ3/jsius.jpg"
+    },
+
+    {
+        id: 12,
+        name: "Vestido para niña",
+        price: 900,
+        category: "vestidos",
+        gender: "niña",
+        description: "Vestido bonito y moderno.",
+        image: "https://i.ibb.co/d0xmh8CL/ksjs.jpg"
+    },
+
+    {
+        id: 13,
+        name: "Camisa para niña",
+        price: 650,
+        category: "camisas",
+        gender: "niña",
+        description: "Camisa con un estilo moderno.",
+        image: "https://i.ibb.co/MDRG8KKM/jui7.jpg"
+    },
+
+    {
+        id: 14,
+        name: "Camisa para niño",
+        price: 650,
+        category: "camisas",
+        gender: "niño",
+        description: "Camisa de manga larga con diseño moderno.",
+        image: "https://i.ibb.co/gFXddLW1/78.jpg"
     }
 
-    .navbar nav {
-        order: 3;
-        width: 100%;
+];
 
-        justify-content: center;
 
-        gap: 15px;
+/* =====================================================
+   VARIABLES
+===================================================== */
 
-        overflow-x: auto;
-    }
+let cart = JSON.parse(localStorage.getItem("deilynCart")) || [];
 
-    .navbar nav a {
-        font-size: 14px;
-        white-space: nowrap;
-    }
+let currentCategory = "todos";
+let currentGender = "todos";
+let currentSearch = "";
 
-    .hero {
-        min-height: 500px;
-    }
+let selectedProduct = null;
 
-    .section {
-        padding: 65px 5%;
-    }
 
-    .section-title h2 {
-        font-size: 34px;
-    }
+/* =====================================================
+   ELEMENTOS HTML
+===================================================== */
 
-    .modal-content {
-        grid-template-columns: 1fr;
-    }
+const productsGrid =
+    document.getElementById("productsGrid");
 
-    .modal-content > img {
-        min-height: 280px;
-        height: 280px;
-    }
+const featuredProducts =
+    document.getElementById("featuredProducts");
 
-    .modal-info {
-        padding: 30px;
-    }
+const cartCount =
+    document.getElementById("cartCount");
 
-    .contact {
-        flex-direction: column;
-        text-align: center;
-    }
+const cartModal =
+    document.getElementById("cartModal");
 
-    .contact-buttons {
-        justify-content: center;
-    }
+const productModal =
+    document.getElementById("productModal");
 
-    .product-image {
-        height: 240px;
-    }
+const cartItems =
+    document.getElementById("cartItems");
+
+const emptyCart =
+    document.getElementById("emptyCart");
+
+const cartSummary =
+    document.getElementById("cartSummary");
+
+const cartTotal =
+    document.getElementById("cartTotal");
+
+const noProducts =
+    document.getElementById("noProducts");
+
+const searchInput =
+    document.getElementById("searchInput");
+
+
+/* =====================================================
+   FORMATO DE DINERO
+===================================================== */
+
+function formatPrice(price) {
+
+    return "RD$" + price.toLocaleString("es-DO");
+
 }
 
-@media (max-width: 500px) {
 
-    .logo {
-        font-size: 18px;
+/* =====================================================
+   MOSTRAR PRODUCTOS
+===================================================== */
+
+function renderProducts() {
+
+    productsGrid.innerHTML = "";
+
+    const filteredProducts = products.filter(product => {
+
+        const categoryMatch =
+            currentCategory === "todos" ||
+            product.category === currentCategory;
+
+        const genderMatch =
+            currentGender === "todos" ||
+            product.gender === currentGender;
+
+        const searchMatch =
+            product.name
+                .toLowerCase()
+                .includes(currentSearch.toLowerCase());
+
+        return categoryMatch && genderMatch && searchMatch;
+
+    });
+
+
+    if (filteredProducts.length === 0) {
+
+        noProducts.style.display = "block";
+
+        return;
+
     }
 
-    .cart-button span {
-        display: none;
-    }
+    noProducts.style.display = "none";
 
-    .hero h1 {
-        font-size: 43px;
-    }
 
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
+    filteredProducts.forEach(product => {
 
-    .cart-content {
-        padding: 20px;
-    }
+        productsGrid.appendChild(
+            createProductCard(product)
+        );
 
-    .cart-item {
-        flex-wrap: wrap;
-    }
+    });
+
 }
+
+
+/* =====================================================
+   PRODUCTOS DESTACADOS
+===================================================== */
+
+function renderFeatured() {
+
+    featuredProducts.innerHTML = "";
+
+    products
+        .filter(product => product.featured)
+        .forEach(product => {
+
+            featuredProducts.appendChild(
+                createProductCard(product)
+            );
+
+        });
+
+}
+
+
+/* =====================================================
+   CREAR TARJETA
+===================================================== */
+
+function createProductCard(product) {
+
+    const card = document.createElement("article");
+
+    card.className = "product-card";
+
+
+    card.innerHTML = `
+
+        <img
+            class="product-image"
+            src="${product.image}"
+            alt="${product.name}"
+            loading="lazy"
+        >
+
+        <div class="product-info">
+
+            <span class="product-category">
+                ${product.category}
+            </span>
+
+            <h3>
+                ${product.name}
+            </h3>
+
+            <p>
+                ${product.description}
+            </p>
+
+            <div class="product-price">
+                ${formatPrice(product.price)}
+            </div>
+
+            <div class="product-actions">
+
+                <button
+                    class="view-product"
+                    onclick="openProduct(${product.id})"
+                >
+                    Ver producto
+                </button>
+
+                <button
+                    class="quick-cart"
+                    onclick="addToCart(${product.id})"
+                    title="Agregar al carrito"
+                >
+                    🛒
+                </button>
+
+            </div>
+
+        </div>
+    `;
+
+    return card;
+
+}
+
+
+/* =====================================================
+   ABRIR PRODUCTO
+===================================================== */
+
+function openProduct(id) {
+
+    const product =
+        products.find(item => item.id === id);
+
+    if (!product) return;
+
+    selectedProduct = product;
+
+    document.getElementById("modalImage").src =
+        product.image;
+
+    document.getElementById("modalImage").alt =
+        product.name;
+
+    document.getElementById("modalName").textContent =
+        product.name;
+
+    document.getElementById("modalDescription").textContent =
+        product.description;
+
+    document.getElementById("modalPrice").textContent =
+        formatPrice(product.price);
+
+    document.getElementById("modalCategory").textContent =
+        product.category;
+
+    productModal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* =====================================================
+   CERRAR PRODUCTO
+===================================================== */
+
+document
+    .getElementById("closeProductModal")
+    .addEventListener("click", closeProductModal);
+
+
+function closeProductModal() {
+
+    productModal.classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =====================================================
+   AGREGAR DESDE MODAL
+===================================================== */
+
+document
+    .getElementById("modalAddCart")
+    .addEventListener("click", () => {
+
+        if (!selectedProduct) return;
+
+        addToCart(selectedProduct.id);
+
+        closeProductModal();
+
+        openCart();
+
+    });
+
+
+/* =====================================================
+   AGREGAR AL CARRITO
+===================================================== */
+
+function addToCart(id) {
+
+    const product =
+        products.find(item => item.id === id);
+
+    if (!product) return;
+
+
+    const existing =
+        cart.find(item => item.id === id);
+
+
+    if (existing) {
+
+        existing.quantity++;
+
+    } else {
+
+        cart.push({
+
+            id: product.id,
+
+            quantity: 1
+
+        });
+
+    }
+
+
+    saveCart();
+
+    updateCart();
+
+}
+
+
+/* =====================================================
+   GUARDAR CARRITO
+===================================================== */
+
+function saveCart() {
+
+    localStorage.setItem(
+        "deilynCart",
+        JSON.stringify(cart)
+    );
+
+}
+
+
+/* =====================================================
+   ACTUALIZAR CARRITO
+===================================================== */
+
+function updateCart() {
+
+    cartItems.innerHTML = "";
+
+    let totalItems = 0;
+
+    let totalPrice = 0;
+
+
+    cart.forEach(item => {
+
+        const product =
+            products.find(p => p.id === item.id);
+
+        if (!product) return;
+
+
+        totalItems += item.quantity;
+
+        totalPrice +=
+            product.price * item.quantity;
+
+
+        const cartItem =
+            document.createElement("div");
+
+        cartItem.className = "cart-item";
+
+
+        cartItem.innerHTML = `
+
+            <img
+                src="${product.image}"
+                alt="${product.name}"
+            >
+
+            <div class="cart-item-info">
+
+                <h4>
+                    ${product.name}
+                </h4>
+
+                <span class="cart-item-price">
+                    ${formatPrice(product.price)}
+                </span>
+
+            </div>
+
+            <div class="quantity-controls">
+
+                <button
+                    onclick="changeQuantity(${product.id}, -1)"
+                >
+                    −
+                </button>
+
+                <strong>
+                    ${item.quantity}
+                </strong>
+
+                <button
+                    onclick="changeQuantity(${product.id}, 1)"
+                >
+                    +
+                </button>
+
+            </div>
+
+            <button
+                class="remove-item"
+                onclick="removeFromCart(${product.id})"
+                title="Eliminar"
+            >
+                🗑️
+            </button>
+
+        `;
+
+
+        cartItems.appendChild(cartItem);
+
+    });
+
+
+    cartCount.textContent = totalItems;
+
+    cartTotal.textContent =
+        formatPrice(totalPrice);
+
+
+    if (cart.length === 0) {
+
+        emptyCart.style.display = "block";
+
+        cartSummary.style.display = "none";
+
+    } else {
+
+        emptyCart.style.display = "none";
+
+        cartSummary.style.display = "block";
+
+    }
+
+}
+
+
+/* =====================================================
+   CAMBIAR CANTIDAD
+===================================================== */
+
+function changeQuantity(id, amount) {
+
+    const item =
+        cart.find(item => item.id === id);
+
+    if (!item) return;
+
+
+    item.quantity += amount;
+
+
+    if (item.quantity <= 0) {
+
+        cart =
+            cart.filter(item => item.id !== id);
+
+    }
+
+
+    saveCart();
+
+    updateCart();
+
+}
+
+
+/* =====================================================
+   ELIMINAR PRODUCTO
+===================================================== */
+
+function removeFromCart(id) {
+
+    cart =
+        cart.filter(item => item.id !== id);
+
+    saveCart();
+
+    updateCart();
+
+}
+
+
+/* =====================================================
+   ABRIR CARRITO
+===================================================== */
+
+document
+    .getElementById("openCart")
+    .addEventListener("click", openCart);
+
+
+function openCart() {
+
+    updateCart();
+
+    cartModal.classList.add("show");
+
+    document.body.style.overflow = "hidden";
+
+}
+
+
+/* =====================================================
+   CERRAR CARRITO
+===================================================== */
+
+document
+    .getElementById("closeCart")
+    .addEventListener("click", closeCart);
+
+
+function closeCart() {
+
+    cartModal.classList.remove("show");
+
+    document.body.style.overflow = "";
+
+}
+
+
+/* =====================================================
+   SEGUIR COMPRANDO
+===================================================== */
+
+document
+    .getElementById("continueShopping")
+    .addEventListener("click", closeCart);
+
+
+/* =====================================================
+   VACIAR CARRITO
+===================================================== */
+
+document
+    .getElementById("clearCart")
+    .addEventListener("click", () => {
+
+        if (cart.length === 0) return;
+
+        const confirmClear =
+            confirm("¿Quieres vaciar todo el carrito?");
+
+        if (!confirmClear) return;
+
+        cart = [];
+
+        saveCart();
+
+        updateCart();
+
+    });
+
+
+/* =====================================================
+   FILTRO CATEGORÍAS
+===================================================== */
+
+document
+    .querySelectorAll(".filter")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            document
+                .querySelectorAll(".filter")
+                .forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+            button.classList.add("active");
+
+            currentCategory =
+                button.dataset.category;
+
+            renderProducts();
+
+        });
+
+    });
+
+
+/* =====================================================
+   FILTRO GÉNERO
+===================================================== */
+
+document
+    .querySelectorAll(".gender")
+    .forEach(button => {
+
+        button.addEventListener("click", () => {
+
+            document
+                .querySelectorAll(".gender")
+                .forEach(btn =>
+                    btn.classList.remove("active")
+                );
+
+            button.classList.add("active");
+
+            currentGender =
+                button.dataset.gender;
+
+            renderProducts();
+
+        });
+
+    });
+
+
+/* =====================================================
+   BUSCADOR
+===================================================== */
+
+searchInput.addEventListener("input", event => {
+
+    currentSearch =
+        event.target.value;
+
+    renderProducts();
+
+});
+
+
+/* =====================================================
+   PEDIDO POR WHATSAPP
+===================================================== */
+
+document
+    .getElementById("whatsappOrder")
+    .addEventListener("click", () => {
+
+        if (cart.length === 0) {
+
+            alert("Tu carrito está vacío.");
+
+            return;
+
+        }
+
+
+        let message =
+            "Hola, quiero hacer un pedido en Deilyn Novedades:%0A%0A";
+
+
+        let total = 0;
+
+
+        cart.forEach(item => {
+
+            const product =
+                products.find(p => p.id === item.id);
+
+            if (!product) return;
+
+
+            const subtotal =
+                product.price * item.quantity;
+
+            total += subtotal;
+
+
+            message +=
+                `• ${product.name} x${item.quantity} — ${formatPrice(subtotal)}%0A`;
+
+        });
+
+
+        message +=
+            `%0A*Total: ${formatPrice(total)}*`;
+
+        message +=
+            "%0A%0AQuisiera consultar disponibilidad y tallas.";
+
+
+        const whatsappURL =
+            `https://wa.me/18295861825?text=${message}`;
+
+
+        window.open(
+            whatsappURL,
+            "_blank"
+        );
+
+    });
+
+
+/* =====================================================
+   CERRAR MODALES AL HACER CLICK AFUERA
+===================================================== */
+
+productModal.addEventListener("click", event => {
+
+    if (event.target === productModal) {
+
+        closeProductModal();
+
+    }
+
+});
+
+
+cartModal.addEventListener("click", event => {
+
+    if (event.target === cartModal) {
+
+        closeCart();
+
+    }
+
+});
+
+
+/* =====================================================
+   ESC PARA CERRAR
+===================================================== */
+
+document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+        closeProductModal();
+
+        closeCart();
+
+    }
+
+});
+
+
+/* =====================================================
+   INICIAR PÁGINA
+===================================================== */
+
+renderFeatured();
+
+renderProducts();
+
+updateCart();
